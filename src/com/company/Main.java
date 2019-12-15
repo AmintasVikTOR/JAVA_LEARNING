@@ -37,6 +37,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        full_out();
+
+    }
+
+    public static void full_out() {
         boolean t_f = true;
 
         do {
