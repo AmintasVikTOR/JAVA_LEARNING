@@ -34,6 +34,9 @@ public class Task3 {
              case 3:
                  task_mother2();
                  break;
+             default:
+                 System.out.println("Incorrect choice! Try again...");
+                 continue;
          }
          }
      while (t_f);
