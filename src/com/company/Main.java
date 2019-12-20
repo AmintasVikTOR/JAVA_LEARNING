@@ -46,7 +46,6 @@ public class Main {
         boolean t_f = true;
 
         do {
-            System.out.println("Make your choice (1-16):");
             choice = user_dialog();
             switch (choice) {
                 case 0:
