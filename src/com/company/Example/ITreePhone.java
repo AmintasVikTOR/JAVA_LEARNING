@@ -1,4 +1,4 @@
-package com.company.TaskOOP;
+package com.company.Example;
 
 public interface ITreePhone {
 }
