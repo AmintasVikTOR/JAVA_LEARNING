@@ -4,11 +4,14 @@ import com.company.pckg_Country.Test;
 import com.sun.deploy.security.SelectableSecurityManager;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.*;
 
 public class MainClassOOP {
     public static void main(String[] args) {
+
+
 
         EnCountry [] array = EnCountry.values();
 
@@ -21,16 +24,44 @@ public class MainClassOOP {
         for (int i=0;i<array.length;i++)
             array[i].print();
 
-        EnCountry ccc=EnCountry.valueOf("France");
+        ///////////////////////
+
+        List<EnCountry> qqq=new ArrayList<>();
 
         for (int i=0;i<array.length;i++)
+            qqq.add(array[i]);
+
+        System.out.println("OLD: "+qqq);
+        Collections.sort(qqq);
+
+        System.out.println("NEW: "+qqq);
+
+        ///////////////////////
+        EnCountry ccc=EnCountry.valueOf("France");
+
+        for (int i=0;i<array.length;i++){
             if (array[i].toString()==ccc.toString())
                 System.out.println("Tested string is '"+ccc.toString()+"'. I'm HAPPY!!!");
+        }
+
+        //nonexist. value
 
 
-//        for (EnCountry s:array)
-//            System.out.println("Element: "+s);
-/*
+        //there will be a mistake
+        try{
+            ccc=EnCountry.valueOf("Hungary");
+            System.out.println("Tested string: "+ccc);
+        }
+        catch (IllegalArgumentException  e )
+        {
+            System.out.println("---------------------------------------");
+            System.out.println("ОШИБКА В УКАЗАНИИ ЗНАЧЕНИЯ ДЛЯ ENUM!!!!");
+            System.out.println("---------------------------------------");
+        }
+
+        for (EnCountry s:array)
+            System.out.println("Element: "+s);
+
         EnCountry cntrBY= EnCountry.Belarus;
         EnCountry cntrRUS= EnCountry.Russia;
         EnCountry cntrCH= EnCountry.China;
@@ -63,13 +94,6 @@ public class MainClassOOP {
         cntrUSA.print();
         cntrAUS.print();
         cntrIND.print();
-*/
-
-
-
-        //System.out.println("I'm hear!!!");
-//        Test t1= new Test(1.22,5);
-  //      t1.add_info();
 
     }
 }

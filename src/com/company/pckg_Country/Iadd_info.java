@@ -1,13 +1,12 @@
 package com.company.pckg_Country;
 
 public interface Iadd_info {
-
-    //public String square="";
-    //public int counts=0;
-
     void add_info (Double sq, int cnt);
-    int get_info_counts (int cnt);
-    //void add_info2 ();
+    void add_info2 (String name, Double sq, int cnt);
 
-
+//    int compareTo();
+//    int get_info_counts (int cnt);
+//    double compareTo ();
+//    void EnCountry (String name, double sq, int cnt);
+//    public  int compareTo(EnCountry q);
 }
