@@ -4,16 +4,18 @@ public class SecondException extends FirstExceprion {
 
     @Override
     public int myExceptionFirst(int a) throws SecondException {
-        int tmp=0;
         if (a<=0) {
             try {
                 //System.out.println("Говорит предок! Введите значение больше 0! Будет вызван родитель!");
                 return super.myExceptionFirst(a);
             }
             catch (SecondException ee){
-                System.out.println("Говорит предок! Введите значение больше 0! Будет вызван родитель!");
+                System.out.println("Говорит наследник! Введите значение больше 0! Будет вызван родитель!");
             } catch (FirstExceprion firstExceprion) {
                 System.out.println("Сообщение из 2 класса со ссылкой на 1-й");
+            } catch (Exception e) {
+                //e.printStackTrace();
+                System.out.println("Тут какая-то ошибка по Exception из 2-го моего класса!");
             }
 
         }
@@ -24,4 +26,27 @@ public class SecondException extends FirstExceprion {
 //        }
     }
 
+    public int arraySize (int size) throws SecondException {
+            if (size<=0)
+                throw new SecondException("Введите значение больше нуля!", this);
+        return Math.abs(size);
+    }
+
+    //конструируем...
+    public SecondException (String message, Throwable b) {
+        super(message, b);
+    }
+
+    public SecondException () {
+        super();
+    }
+
+    public SecondException (String message) {
+        super(message);
+    }
+
+//    @Override
+//    public String getMessage() {
+//        return "Ошибка в обработчике\n"+super.getMessage();
+//    }
 }
