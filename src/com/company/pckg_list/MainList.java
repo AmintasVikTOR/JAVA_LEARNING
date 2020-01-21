@@ -2,6 +2,7 @@ package com.company.pckg_list;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -31,19 +32,29 @@ public static String myString="";
         List<Passport> collection=new ArrayList<>();
         Passport pass=new Passport();
         long time = System.currentTimeMillis();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String s1="";
+
+        int a = (int)(( Math.random() * (9999999 - 1000000 + 1) + 1000000));
+        int rand_year = 2019;
+        int rand_month = 12;
+        int rand_day = 12;
 
         writer.write("Count elements: "+cnt);
         writer.append('\n');
 
         for (int i=0;i<cnt;i++) {
             s1="";
-            int a = (int)(( Math.random() * (9999999 - 1000000 + 1) + 1000000));
+            a = (int)(( Math.random() * (9999999 - 1000000 + 1) + 1000000));
+            rand_year = (int)((Math.random() * (2019 - 2000 + 1) + 2000));
+            rand_month = (int)((Math.random() * (12 - 1 + 1) + 1));
+            rand_day = (int)((Math.random() * (28 - 1 + 1) + 1));
             pass.setId("МР"+a);
-            pass.setDatePasport(new Date());
+            pass.setDatePasport(new Date( rand_year +"/"+rand_month+"/"+rand_day));
             pass.setFio("Иванов Иван Иванович");
             collection.add(pass);
-            s1=pass.getId()+"__"+pass.getDatePasport()+"__"+pass.getFio()+"_ADDED!";
+            s1= pass.getId() + "__" + dateFormat.format(pass.getDatePasport()) + "__"+pass.getFio()+"_ADDED!";
+            //s1= pass.getId() + "__" + String.format("e;EEE, MMM d, ''yy\"e",pass.getDatePasport())+ "__"+pass.getFio()+"_ADDED!";
             writer.write(s1);
             writer.append('\n');
         }
