@@ -1,9 +1,7 @@
-package com.company.computer;
+package com.company.pckg_computer;
 
-import com.company.computer.api.enums.eCPU;
-import com.company.computer.api.enums.eHDD;
-import com.company.computer.api.enums.eRAM;
-import com.company.computer.api.interfaces.IParts;
+import com.company.pckg_computer.api.interfaces.global.IParts;
+import com.company.pckg_computer.api.interfaces.global.IStandarts;
 
 public class Computer  {
     //это отдельный класс, имеющий всего один метод: запуск компьютера
@@ -12,16 +10,26 @@ public class Computer  {
     // Компьютер должен хранить инфо какие стандарты для него подходят, а запчасти стандарты которым они соответствуют
     // Корректность работы зависит от реализации и по умолчанию всегда запчасть работает корректно, в отдельных реализациях запчасть должна быть бракованной
 
-    IParts [] parts;
-    public Computer(IParts [] parts){
+    private IParts [] parts;
+    private IStandarts[] standards;
+
+    //constructor..
+    public Computer(IParts [] parts, IStandarts[] standarts){
         this.parts=parts;
-        //конструктор..
+        this.standards=standarts;
     }
-
-    public void runComputer(){
+    public boolean runComputer(){
         //реализация метода запуска компьютера
-        System.out.println("Компьютер запущен!");
-
+        boolean result = true;
+        for (IParts part : parts) {
+            for (IStandarts standart : standards) {
+                System.out.println("STANDART: "+standart);
+                System.out.println("PART: "+part);
+                if(standart == part ){
+                    System.out.println("All OK!!!");
+                }
+            }
+        }
+        return result;
     }
-
 }
