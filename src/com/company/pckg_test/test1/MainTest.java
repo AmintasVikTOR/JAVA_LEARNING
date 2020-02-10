@@ -1,5 +1,5 @@
-package com.company.test;
-import static com.company.test.FirstTest.aaa;
+package com.company.pckg_test.test1;
+
 public class MainTest {
     public static void main(String[] args) {
 
