@@ -55,8 +55,7 @@ public class BMVEngineOriginal implements IChangebleFuelType {
     }
     public double running(){
         if(running){
-            //TODO добавить рандом
-            return 2;
+            return 99;
         }
         return 0;
     }

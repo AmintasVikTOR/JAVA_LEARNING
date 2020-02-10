@@ -25,7 +25,7 @@ public class NoNameEngine implements IEngine {
 
     @Override
     public boolean start() {
-        System.out.println("Завёлся... И немного глохну");
+        System.out.println("Завёлся.. глохну");
         return true;
     }
 
