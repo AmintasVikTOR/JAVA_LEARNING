@@ -14,6 +14,7 @@ public class MainStudents {
     public static final Path testFilePath =  Paths.get("C://JAVA//files//studentsList.txt");
     public static final Path filteredStudents =  Paths.get("C://JAVA//files//filteredStudents.txt");
     public static final Path filteredStudents2 =  Paths.get("C://JAVA//files//filteredStudents.txt");
+    public static final Path filteredStudentsDel =  Paths.get("C://JAVA//files//filteredStudentsDeleted.txt");
 
 
     public static void main(String[] args) throws Exception  {
@@ -179,7 +180,7 @@ public class MainStudents {
                 for (int i=0;i<collectionStudentReader2.size();i++)
                     System.out.println(collectionStudentReader2.get(i).toString());
 
-                Path filteredStudentsDel =  Paths.get("C://JAVA//files//filteredStudentsDeleted.txt");
+//                Path filteredStudentsDel =  Paths.get("C://JAVA//files//filteredStudentsDeleted.txt");
                 FileWriter writerDel = new FileWriter(String.valueOf(filteredStudentsDel), false);
                 //List<Student> collectionStudent = new ArrayList<>();
                 for (int i = 0; i < collectionStudentReader2.size(); i++) {
