@@ -19,7 +19,7 @@ public class MyWindow  extends JFrame {
 
     }
 
-    private MyWindow() {
+    public MyWindow() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGTH);
         setLocationRelativeTo(null);
